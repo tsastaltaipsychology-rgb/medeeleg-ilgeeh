@@ -16,20 +16,18 @@
   .page { display: none; }
   .page.active { display: block; }
 
-  /* HEADER */
   .header { padding: 24px 28px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 12px; }
   .hicon { width: 38px; height: 38px; background: var(--accent); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
   .htitle { font-size: 17px; font-weight: 600; color: var(--text); }
   .hsub { font-size: 11px; color: var(--muted); margin-top: 2px; font-family: monospace; }
 
-  /* FORM */
   .form-page { min-height: 100vh; display: flex; flex-direction: column; }
   .body { flex: 1; padding: 28px; max-width: 520px; width: 100%; margin: 0 auto; }
   .notice { background: rgba(95,94,90,0.18); border: 1px solid rgba(95,94,90,0.35); border-radius: 8px; padding: 13px 15px; font-size: 13px; color: #D3D1C7; margin-bottom: 24px; line-height: 1.5; }
   .field { margin-bottom: 18px; }
   label { display: block; font-size: 11px; font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase; color: var(--muted); margin-bottom: 7px; }
   .opt { font-size: 10px; background: var(--border); color: var(--muted); padding: 2px 6px; border-radius: 4px; margin-left: 5px; text-transform: none; letter-spacing: 0; vertical-align: middle; font-weight: 400; }
-  select, input[type="text"], input[type="date"], textarea {
+  select, input[type="text"], input[type="date"], input[type="password"], textarea {
     width: 100%; background: var(--card); border: 1px solid var(--border); border-radius: 8px;
     color: var(--text); font-family: inherit; font-size: 14px;
     padding: 11px 13px; outline: none; transition: border-color 0.2s;
@@ -46,7 +44,7 @@
   .anon-row.on .chk svg { display: block; }
   .al { font-size: 14px; color: var(--text); }
   .ad { font-size: 12px; color: var(--muted); margin-top: 2px; }
-  .btn { width: 100%; background: var(--accent); color: #F1EFE8; border: none; border-radius: 8px; padding: 14px; font-size: 15px; font-weight: 600; font-family: inherit; cursor: pointer; margin-top: 6px; transition: background 0.2s; letter-spacing: 0.2px; }
+  .btn { width: 100%; background: var(--accent); color: #F1EFE8; border: none; border-radius: 8px; padding: 14px; font-size: 15px; font-weight: 600; font-family: inherit; cursor: pointer; margin-top: 6px; transition: background 0.2s; }
   .btn:hover { background: var(--accent-h); }
   .btn:disabled { opacity: 0.5; cursor: not-allowed; }
   .sending { display: none; align-items: center; justify-content: center; gap: 10px; font-size: 14px; color: var(--muted); padding: 14px; }
@@ -59,19 +57,28 @@
   @keyframes pop { 0% { transform: scale(0.5); opacity: 0; } 70% { transform: scale(1.1); } 100% { transform: scale(1); opacity: 1; } }
   .success-title { font-size: 22px; font-weight: 600; margin-bottom: 10px; }
   .success-desc { font-size: 14px; color: var(--muted); max-width: 320px; line-height: 1.6; }
-  .back-btn { margin-top: 32px; background: transparent; border: 1px solid var(--border); color: var(--text); border-radius: 8px; padding: 11px 24px; font-size: 14px; font-family: inherit; cursor: pointer; transition: border-color 0.2s; }
+  .back-btn { margin-top: 32px; background: transparent; border: 1px solid var(--border); color: var(--text); border-radius: 8px; padding: 11px 24px; font-size: 14px; font-family: inherit; cursor: pointer; }
   .back-btn:hover { border-color: #555; }
 
-  /* QR PAGE */
+  /* LOGIN */
+  .login-page { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 40px 24px; }
+  .login-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 32px; width: 100%; max-width: 340px; }
+  .login-title { font-size: 18px; font-weight: 600; margin-bottom: 6px; text-align: center; }
+  .login-sub { font-size: 13px; color: var(--muted); text-align: center; margin-bottom: 24px; line-height: 1.5; }
+  .login-err { font-size: 13px; color: #ff6b6b; margin-top: 10px; text-align: center; display: none; }
+  .login-btn { width: 100%; background: var(--accent); color: #F1EFE8; border: none; border-radius: 8px; padding: 12px; font-size: 14px; font-weight: 600; font-family: inherit; cursor: pointer; margin-top: 12px; transition: background 0.2s; }
+  .login-btn:hover { background: var(--accent-h); }
+
+  /* QR */
   .qr-page { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 24px; }
   .qr-label { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); font-family: monospace; margin-bottom: 20px; }
   .qr-card { background: white; border-radius: 16px; padding: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 60px rgba(95,94,90,0.2); }
   .qr-title { font-size: 22px; font-weight: 600; margin-top: 28px; margin-bottom: 8px; text-align: center; }
   .qr-desc { font-size: 14px; color: var(--muted); text-align: center; max-width: 300px; line-height: 1.6; margin-bottom: 28px; }
   .qr-actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
-  .btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text); border-radius: 8px; padding: 11px 20px; font-size: 14px; font-family: inherit; cursor: pointer; transition: border-color 0.2s; }
+  .btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text); border-radius: 8px; padding: 11px 20px; font-size: 14px; font-family: inherit; cursor: pointer; }
   .btn-outline:hover { border-color: #555; }
-  .btn-primary { background: var(--accent); border: none; color: #F1EFE8; border-radius: 8px; padding: 11px 20px; font-size: 14px; font-family: inherit; cursor: pointer; transition: background 0.2s; }
+  .btn-primary { background: var(--accent); border: none; color: #F1EFE8; border-radius: 8px; padding: 11px 20px; font-size: 14px; font-family: inherit; cursor: pointer; }
   .btn-primary:hover { background: var(--accent-h); }
   .steps { margin-top: 32px; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; max-width: 340px; width: 100%; }
   .steps-title { font-size: 12px; letter-spacing: 0.8px; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
@@ -83,7 +90,7 @@
 <body>
 
 <!-- FORM PAGE -->
-<div id="formPage" class="page form-page active">
+<div id="formPage" class="page form-page">
   <div class="header">
     <div class="hicon">🛡️</div>
     <div>
@@ -93,7 +100,6 @@
   </div>
   <div class="body">
     <div class="notice">⚠️ Таны мэдээлэл нууцлалтайгаар хүлээн авагдана. Нэргүй илгээх сонголт байна.</div>
-
     <div class="field">
       <label>Дээрэлхэлтийн төрөл</label>
       <select id="type">
@@ -105,22 +111,18 @@
         <option>Бусад</option>
       </select>
     </div>
-
     <div class="field">
       <label>Болсон огноо <span class="opt">заавал биш</span></label>
       <input type="date" id="date">
     </div>
-
     <div class="field">
       <label>Болсон газар <span class="opt">заавал биш</span></label>
       <input type="text" id="location" placeholder="Жишээ: 3-р анги, гадна талбай...">
     </div>
-
     <div class="field">
       <label>Юу болсон бэ?</label>
       <textarea id="description" placeholder="Болсон явдлыг дэлгэрэнгүй бичнэ үү..."></textarea>
     </div>
-
     <div class="field">
       <label>Нэргүй илгээх</label>
       <div class="anon-row" id="anonToggle" onclick="toggleAnon()">
@@ -135,17 +137,14 @@
         </div>
       </div>
     </div>
-
     <div class="field" id="nameField">
       <label>Таны нэр <span class="opt">заавал биш</span></label>
       <input type="text" id="name" placeholder="Нэр оруулах...">
     </div>
-
     <div class="sending" id="sending">
       <div class="spinner"></div>
       <span>Илгээж байна...</span>
     </div>
-
     <button class="btn" id="submitBtn" onclick="submitReport()">Мэдээлэл илгээх →</button>
   </div>
 </div>
@@ -158,12 +157,21 @@
   <button class="back-btn" onclick="showPage('formPage')">← Буцах</button>
 </div>
 
+<!-- LOGIN PAGE -->
+<div id="loginPage" class="page login-page">
+  <div class="login-card">
+    <div class="login-title">🔒 Нэвтрэх</div>
+    <div class="login-sub">QR хуудсыг харахын тулд<br>нууц үг оруулна уу</div>
+    <input type="password" id="pwInput" placeholder="Нууц үг..." onkeydown="if(event.key==='Enter')checkPw()">
+    <div class="login-err" id="pwErr">Нууц үг буруу байна</div>
+    <button class="login-btn" onclick="checkPw()">Нэвтрэх →</button>
+  </div>
+</div>
+
 <!-- QR PAGE -->
 <div id="qrPage" class="page qr-page">
   <div class="qr-label">Скан хийх QR код</div>
-  <div class="qr-card">
-    <div id="qrcode"></div>
-  </div>
+  <div class="qr-card"><div id="qrcode"></div></div>
   <div class="qr-title">Мэдээлэл Илгээх</div>
   <div class="qr-desc">Энэ QR кодыг скан хийснээр мэдээлэл илгээх боломжтой</div>
   <div class="qr-actions">
@@ -180,6 +188,7 @@
 
 <script>
   const EMAILS = ['Badamtsetseg3kqwv@moes.edu.mn', 'Ulziisaihan7020@moes.edu.mn'];
+  const ADMIN_PW = 'Tsast1234';
   let isAnon = false;
 
   function showPage(id) {
@@ -191,6 +200,17 @@
     isAnon = !isAnon;
     document.getElementById('anonToggle').classList.toggle('on', isAnon);
     document.getElementById('nameField').style.display = isAnon ? 'none' : 'block';
+  }
+
+  function checkPw() {
+    const val = document.getElementById('pwInput').value;
+    if (val === ADMIN_PW) {
+      document.getElementById('pwErr').style.display = 'none';
+      document.getElementById('pwInput').value = '';
+      showPage('qrPage');
+    } else {
+      document.getElementById('pwErr').style.display = 'block';
+    }
   }
 
   function downloadQR() {
@@ -234,21 +254,20 @@
     }, 1200);
   }
 
-  // Init
   window.onload = function() {
-    const FORM_URL = window.location.href.split('?')[0] + '?view=form';
+    const baseURL = window.location.href.split('?')[0];
     new QRCode(document.getElementById('qrcode'), {
-      text: FORM_URL,
+      text: baseURL,
       width: 220, height: 220,
       colorDark: '#000000', colorLight: '#ffffff',
       correctLevel: QRCode.CorrectLevel.H
     });
 
     const params = new URLSearchParams(window.location.search);
-    if (params.get('view') === 'form') {
-      showPage('formPage');
+    if (params.get('admin') === '1') {
+      showPage('loginPage');
     } else {
-      showPage('qrPage');
+      showPage('formPage');
     }
   };
 </script>
